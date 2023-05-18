@@ -75,7 +75,7 @@ public class ManagerReversedTest {
     }
 
     @Test
-    public void shouldFindLastArrayAboveLimit() {
+    public void shouldFindLastArrayAboveLimit5ButIs7() {
         manager.addFilm(item1);
         manager.addFilm(item2);
         manager.addFilm(item3);
@@ -90,7 +90,7 @@ public class ManagerReversedTest {
     }
 
     @Test
-    public void shouldFindLastArrayEqualToLimit() {
+    public void shouldFindLastArrayEqualToLimit5AndIs5() {
         manager.addFilm(item1);
         manager.addFilm(item2);
         manager.addFilm(item3);
@@ -103,7 +103,7 @@ public class ManagerReversedTest {
     }
 
     @Test
-    public void shouldFindLastArrayBelowLimit() {
+    public void shouldFindLastArrayBelowLimit5ButIs4() {
         manager.addFilm(item1);
         manager.addFilm(item2);
         manager.addFilm(item3);
@@ -115,23 +115,7 @@ public class ManagerReversedTest {
     }
 
     @Test
-    public void shouldFindLastArrayEqualToLimit3() {
-
-        manager1.addFilm(item1);
-        manager1.addFilm(item2);
-        manager1.addFilm(item3);
-        manager1.addFilm(item4);
-        manager1.addFilm(item5);
-
-        manager1.setLimit(3);
-        PosterItem[] expected = {item5, item4, item3};
-        PosterItem[] actual = manager1.findLast();
-        Assertions.assertArrayEquals(expected, actual);
-
-    }
-
-    @Test
-    public void shouldFindLastArrayEqualToLimit1() {
+    public void shouldFindLastArrayEqualToLimit() {
 
         manager1.addFilm(item1);
         manager1.addFilm(item2);
@@ -146,18 +130,41 @@ public class ManagerReversedTest {
     }
 
     @Test
-    public void shouldFindLastArrayEqualToLimit6() {
+    public void shouldFindLastArrayEqualToLimit3ButIs2() {
+
+        manager1.addFilm(item1);
+        manager1.addFilm(item2);
+
+        manager1.setLimit(3);
+        PosterItem[] expected = {item2, item1};
+        PosterItem[] actual = manager1.findLast();
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldFindLastArrayEqualToLimit3AndIs3() {
+
+        manager1.addFilm(item1);
+        manager1.addFilm(item2);
+        manager1.addFilm(item3);
+
+        manager1.setLimit(3);
+        PosterItem[] expected = {item3, item2, item1};
+        PosterItem[] actual = manager1.findLast();
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldFindLastArrayEqualToLimit3ButIs4() {
 
         manager1.addFilm(item1);
         manager1.addFilm(item2);
         manager1.addFilm(item3);
         manager1.addFilm(item4);
-        manager1.addFilm(item5);
 
-        manager1.setLimit(6);
-        PosterItem[] expected = {item5, item4, item3};
+        manager1.setLimit(3);
+        PosterItem[] expected = {item4, item3, item2};
         PosterItem[] actual = manager1.findLast();
         Assertions.assertArrayEquals(expected, actual);
-
     }
 }

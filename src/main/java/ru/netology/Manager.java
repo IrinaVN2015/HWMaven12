@@ -2,16 +2,9 @@ package ru.netology;
 
 public class Manager {
 
+    private int limit = 5;
 
-    int limit = 5;
-    public PosterItem[] items = new PosterItem[0];
-
-    public Manager() {
-    }
-
-    public Manager(int limit) {
-        this.limit = limit;
-    }
+    private PosterItem[] items = new PosterItem[0];
 
     public int getLimit() {
         return limit;
@@ -29,6 +22,17 @@ public class Manager {
 
     public PosterItem[] getItems() {
         return items;
+    }
+
+    public void setItems(PosterItem[] items) {
+        this.items = items;
+    }
+
+    public Manager() {
+    }
+
+    public Manager(int limit) {
+        this.limit = limit;
     }
 
     public void addFilm(PosterItem item) {

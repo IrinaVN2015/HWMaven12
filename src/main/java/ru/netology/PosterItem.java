@@ -9,4 +9,19 @@ public class PosterItem {
         this.genre = genre;
     }
 
+    public String getNameOfFilm() {
+        return nameOfFilm;
+    }
+
+    public void setNameOfFilm(String nameOfFilm) {
+        this.nameOfFilm = nameOfFilm;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
 }
